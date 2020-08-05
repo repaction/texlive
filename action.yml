@@ -1,0 +1,26 @@
+name: TeXLive Action
+description: Compile LaTeX documents into PDF with TeXLive.
+author: Fei Qi
+branding:
+  icon: 'printer'
+  color: 'blue'
+inputs:
+  tex_files:
+    description: The LaTeX file to be compiled.
+    required: true
+  compiler:
+    description: The LaTeX engine to be invoked.
+    default: latexmk
+  options:
+    description: Arguments to be passed to the LaTeX engine
+    default: -pdf -cd -file-line-error -halt-on-error -interaction=nonstopmode
+  # working_directory:
+  #   description: The working directory for the compilation.
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.tex_files }}
+    - ${{ inputs.compiler }}
+    - ${{ inputs.options }}
+    # - ${{ inputs.working_directory }}
