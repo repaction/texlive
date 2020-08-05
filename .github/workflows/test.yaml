@@ -7,12 +7,10 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v2
       - name: Compile basic LaTeX document
-        uses: fredqi/tl-action@master
+        uses: fredqi/tl-action@xelatex
         with:
           tex_files: |
-            test/test.tex
-            test/math.tex
+            test/test-xe.tex
       - name: Check pdf files
         run: |
-          file test/test.pdf | grep -q 'PDF'
-          file test/math.pdf | grep -q ' PDF '
+          file test/test-xe.pdf | grep -q 'PDF'

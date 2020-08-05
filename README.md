@@ -14,7 +14,7 @@ Default to `latexmk`, can be changed to `latex` or `pdflatex`.
 
 - `options`
 
-Default options for `latexmk` is set to `-pdf -file-line-error -halt-on-error -interaction=nonstopmode`. The options should be changed correspondingly when the `compiler` has been changed.
+Default options for `latexmk` is set to `-pdf -cd -file-line-error -halt-on-error -interaction=nonstopmode`. The options should be changed correspondingly when the `compiler` has been changed.
 
 
 ## Example
@@ -32,7 +32,7 @@ jobs:
         uses: fredqi/tl-action@master
         with:
           tex_files: |
-	    main.tex
+            main.tex
 ```
 
 ## References:

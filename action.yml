@@ -13,9 +13,7 @@ inputs:
     default: latexmk
   options:
     description: Arguments to be passed to the LaTeX engine
-    default: -pdf -cd -file-line-error -halt-on-error -interaction=nonstopmode
-  # working_directory:
-  #   description: The working directory for the compilation.
+    default: -pdfxe -cd -file-line-error -halt-on-error -interaction=nonstopmode
 runs:
   using: docker
   image: Dockerfile
@@ -23,4 +21,3 @@ runs:
     - ${{ inputs.tex_files }}
     - ${{ inputs.compiler }}
     - ${{ inputs.options }}
-    # - ${{ inputs.working_directory }}

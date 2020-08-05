@@ -3,3 +3,5 @@ auto/
 *.fdb_latexmk
 *.fls
 *.log
+*.xdv
+*.pdf
