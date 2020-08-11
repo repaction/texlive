@@ -1,4 +1,4 @@
-FROM fredqi/texlive:mynsfc
+FROM fredqi/texlive:xelatex
 
 COPY entrypoint.sh /usr/bin/
 
