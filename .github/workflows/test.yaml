@@ -7,7 +7,7 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v2
       - name: Compile basic LaTeX document
-        uses: fredqi/tl-action@xelatex
+        uses: repaction/texlive@xelatex
         with:
           tex_files: |
             test/test-xe.tex

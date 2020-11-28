@@ -1,3 +1,6 @@
+![Test TeXLive Action](https://github.com/repaction/texlive/workflows/Test%20TeXLive%20Action/badge.svg)
+---
+
 # LaTeXmk Action
 
 This action compiles LaTeX docs to PDF using latexmk with a minimal texlive image.
@@ -29,7 +32,7 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v2
       - name: Compile LaTeX document
-        uses: fredqi/tl-action@master
+        uses: repaction/texlive@xelatex
         with:
           tex_files: |
             main.tex
