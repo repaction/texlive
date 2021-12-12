@@ -13,7 +13,7 @@ fi
 if [[ -z "$compiler" && -z "$options" ]]; then
   echo "Input 'compiler' and 'options' are both empty. Reset them to default values."
   compiler="latexmk"
-  options="-pdfxe -cd -file-line-error -halt-on-error -interaction=nonstopmode"
+  options="-pdfxe -quiet -cd"
 fi
 
 while IFS= read -r f; do

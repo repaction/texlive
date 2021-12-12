@@ -13,7 +13,7 @@ inputs:
     default: latexmk
   options:
     description: Arguments to be passed to the LaTeX engine
-    default: -pdfxe -cd -file-line-error -halt-on-error -interaction=nonstopmode
+    default: -pdfxe -quiet -cd
 runs:
   using: docker
   image: Dockerfile
