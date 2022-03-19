@@ -21,11 +21,14 @@ while IFS= read -r f; do
     continue
   fi
 
-  echo "Compiling $f..."
+  echo "::group::Compiling $f..."
 
   if [[ ! -f "$f" ]]; then
     echo "File '$f' cannot be found."
   fi
 
   ${compiler} ${options} $f
+  
+  echo "::endgroup::"
+  
 done <<< "$tex_files"
