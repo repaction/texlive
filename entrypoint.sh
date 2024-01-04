@@ -13,7 +13,7 @@ fi
 if [[ -z "$compiler" && -z "$options" ]]; then
   echo "Input 'compiler' and 'options' are both empty. Reset them to default values."
   compiler="latexmk"
-  options="-pdf -cd -file-line-error -halt-on-error -interaction=nonstopmode"
+  options="-pdf -quiet -cd"
 fi
 
 while IFS= read -r f; do
@@ -21,11 +21,14 @@ while IFS= read -r f; do
     continue
   fi
 
-  echo "Compiling $f..."
+  echo "::group::Compiling $f..."
 
   if [[ ! -f "$f" ]]; then
     echo "File '$f' cannot be found."
   fi
 
   ${compiler} ${options} $f
+  
+  echo "::endgroup::"
+  
 done <<< "$tex_files"
